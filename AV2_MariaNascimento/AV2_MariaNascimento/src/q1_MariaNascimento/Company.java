@@ -14,11 +14,14 @@ public class Company {
         this.vehicles = new ArrayList<>();
     }
 
-    public void hire(Vehicle vehicle) {
+    public void CompName(){
+        System.out.println("Comapny name: " + this.name);
+    }
+    public void Hire(Vehicle vehicle) {
         vehicles.add(vehicle);
     }
 
-    public void employs(Employee employee) {
+    public void Employs(Employee employee) {
         employees.add(employee);
     }
 }
@@ -28,6 +31,10 @@ class Vehicle {
 
     public Vehicle(String registrationNumber) {
         this.registrationNumber = registrationNumber;
+    }
+
+    public String RegNumber(){
+        return this.registrationNumber;
     }
 }
 
@@ -58,7 +65,19 @@ class Employee {
         this.vehicles = new ArrayList<>();
     }
 
-    public void drives(Vehicle vehicle) {
+    public void EmploName() {
+        System.out.println("Employee Name: " + this.name);
+    }
+
+    public void Drives(Vehicle vehicle) {
         vehicles.add(vehicle);
+    }
+
+    public void WhatDrive() {
+        System.out.print("Employee Vehicles: ");
+        for (Vehicle vehicle : vehicles) {
+            System.out.print(vehicle.RegNumber() + " ");
+        }
+        System.out.println();
     }
 }
